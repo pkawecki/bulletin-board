@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import styles from "./NotFound.module.scss";
 import clsx from "clsx";
+import { Header } from "../../layout/Header/Header";
 
 // import {
 //   reduxSelector,
@@ -11,8 +12,9 @@ import clsx from "clsx";
 
 const Component = ({ className, children }) => (
   <div className={clsx(className, styles.root)}>
-    <h2>Mainn Layout</h2>
-    {children}
+    <Header>
+      <h2>Page not found</h2>
+    </Header>
   </div>
 );
 Component.propTypes = {
@@ -34,5 +36,4 @@ export {
   Component as NotFound,
   //   Container as NotFound,
   Component as NotFoundComponent,
-  
 };

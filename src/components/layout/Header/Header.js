@@ -1,8 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 import styles from "./Header.module.scss";
 import clsx from "clsx";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
 
 // import {
 //   reduxSelector,
@@ -11,8 +16,36 @@ import clsx from "clsx";
 
 const Component = ({ className, children }) => (
   <div className={clsx(className, styles.root)}>
-    <h2>Header</h2>
+    <AppBar position="relative">
+      <Toolbar>
+        <Button color="inherit" sx={{ size: "medium" }}>
+          <Typography variant="h6" component="div" mx={2} sx={{ flexGrow: 1 }}>
+            Log-in
+          </Typography>
+        </Button>
+        <Button color="inherit" sx={{ size: "medium" }}>
+          <Typography variant="h6" component="div" mx={2} sx={{ flexGrow: 1 }}>
+            Logout
+          </Typography>
+        </Button>
+      </Toolbar>
+    </AppBar>
     {children}
+    {/* Footer */}
+    <Box sx={{ bgcolor: "background.paper", p: 6 }} component="footer">
+      <Typography variant="h6" align="center" gutterBottom>
+        Footer
+      </Typography>
+      <Typography
+        variant="subtitle1"
+        align="center"
+        color="text.secondary"
+        component="p"
+      >
+        Something here to give the footer a purpose!
+      </Typography>
+    </Box>
+    {/* End footer */}
   </div>
 );
 Component.propTypes = {
