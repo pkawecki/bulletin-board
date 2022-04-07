@@ -1,3 +1,3 @@
 # Pierwszy
 ## Drugi
-## Trzeci
+### Trzeci
